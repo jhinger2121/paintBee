@@ -1,0 +1,92 @@
+<!-- THINGS TO DOS -->
+<!-- change they brush type ,,DONE -->
+<!-- change brush size -->
+<!-- change brush opasity -->
+<!-- change brush settings -->
+<!-- change brush save the canvas -->
+
+<!-- choose default settings for each brush  -->
+  <!-- HOW TO DO: create an object for each brush then for loop through each object to set settings -->
+  <!-- save color setting for each obj when all the brush are ready -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaintEi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <ul class="nav">
+            <li class="dropdown">
+              <button class="dropbtn">File</button>
+              <div class="dropdown-content" style="display: none;">
+                <a href="#">New Image</a>
+                <a href="#">Open Image</a>
+                <a href="#">Save</a>
+                <a href="#">Export</a>
+                <a href="#">Undo</a>
+                <a href="#">Redo</a>
+              </div>
+						</li>
+            <li id="liPencil">
+              <span>Type:</span>
+              <span>
+                <select id="brushes">
+                  <option value="Plain" selected="true">Plain</option>
+                  <option value="Sketchy">Sketchy</option>
+                  <option value="Shaded">Shaded</option>
+                  <option value="Web">Web</option>
+                  <option value="Trail">Trail</option>
+                  <option value="Ribbon">Ribbon</option>
+                  <option value="Fur">Fur</option>
+                </select>
+              </span>
+            </li>
+            <li id="liCircle">
+              <span>Type:</span>
+              <span>
+                <select id="shapes">
+                  <option value="circle" selected="true">Circle</option>
+                  <option value="line">Line</option>
+                  <option value="rectangle">Rectangle</option>
+                </select>
+              </span>
+            </li>
+            <li id="liSize">
+              <span>Size:</span>
+              <span><input id="size" type="number" autocomplete="none" value="2" max="20" min="0.5" step="0.5"></span>
+            </li>
+            <li id="liOpacity">
+              <span>Opacity</span>
+              <span><input id="opacity" type="number" autocomplete="none" value="100" max="100" min="1"></span>
+            </li>
+            <input type="color" id="fcolor" name="body" value="#f6b73c">
+        </ul>
+        <hr>
+    </nav>
+    <main class="main">
+      <div class="left-side">
+        <button id="pencilbtn" class="btn-selected" type="button">Pencil</button><br>
+        <button id="brushbtn">Brush</button><br>
+        <button id="bucketlbtn">Bucket</button><br>
+        <button id="eraserbtn">Eraser</button><br>
+        <button id="shapebtn">Shape</button><br>
+        <button id="imagebtn">Image</button><br>
+        <button id="textbtn">Text</button><br>
+        <button id="colorbtn">Color</button><br>
+        <button id="colorbtn">Color</button><br>
+        <button id="undobtn">undo</button><br>
+        <button id="redobtn">redo</button><br>
+      </div>
+      <div class="right-side">
+        <canvas id="painter" width="1200" height="560"></canvas>
+        <canvas id="sketcher" width="1200" height="560"></canvas>
+      </div> 
+    </main>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
