@@ -16,6 +16,12 @@ const tmp_canvas = $('sketcher');
 export const ctx = canvas.getContext('2d');
 export const tmp_ctx = tmp_canvas.getContext('2d');
 
+canvas.width = window.innerWidth - 250;
+tmp_canvas.width = window.innerWidth - 250;
+
+canvas.height = window.innerHeight - 10;
+tmp_canvas.height = window.innerHeight - 10;
+
 function addEventsTo(tmp_canvas, obj){
 	tmp_canvas.onmousedown = (e)=>{obj.onMouseDown(e)}
 	tmp_canvas.onmousemove = (e)=>{obj.onMouseMove(e, tmp_canvas, tmp_ctx)}
@@ -39,7 +45,7 @@ function _default() {
 	ctx.strokeStyle = $('fcolor').value;
 	tmp_ctx.strokeStyle = $('fcolor').value;
 }
-// _default();
+_default();
 
 // choosing brushes
 function chooseBrush(){
