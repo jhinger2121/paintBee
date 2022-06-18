@@ -9,28 +9,32 @@
 }
 
 .right-side{
-    border: 1px solid black;
+    position: relative;
+    /* border: 1px solid black; */
     width: 250px;
+    /* height: 800px; */
+    margin-left: 10px;
 }
 
 #painter{
-    /* margin: 15px 0 0 40px; */
+    margin: 0px 0 0 10px;
     border: 1px solid black;
 }
 #sketcher{
     position: absolute;
-    border: 1px solid red;
+    border: 1px solid black;
     top: 0px;
-    left: 0px;
+    left: 10px;
 }
 
 .title {
-    background-color: rgb(218, 218, 218);
     padding: 10px;
     display: flex;
     align-items: center;
     border-bottom: 2px solid rgb(218, 218, 218);
     box-shadow: 2px 5px 18px #888888;
+    color: white;
+    background-color: #2a3d52;
 }
 .title h2 {
     font-family: Arial, Helvetica, sans-serif;
@@ -43,9 +47,7 @@
 .title span{
     display: inline;
 }
-.title span{
-    color: #A23202;
-}
+
 .title a{
     margin-left: auto;
 }
@@ -111,4 +113,27 @@
 }
 .option div {
     margin-bottom: 10px;
+}
+
+.footer {
+    text-align: center;
+    color: white;
+    background-color: #2a3d52;
+    padding: 10px;
+    width: 208px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px
+}
+.footer-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 10 !important;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+.footer a {
+    color: white;
 }

@@ -16,6 +16,9 @@ const tmp_canvas = $('sketcher');
 export const ctx = canvas.getContext('2d');
 export const tmp_ctx = tmp_canvas.getContext('2d');
 
+let pencil_class = document.querySelector('.pencil-type');
+let shape_class = document.querySelector('.shape-type');
+
 canvas.width = window.innerWidth - 250;
 tmp_canvas.width = window.innerWidth - 250;
 
@@ -44,6 +47,9 @@ function _default() {
 
 	ctx.strokeStyle = $('fcolor').value;
 	tmp_ctx.strokeStyle = $('fcolor').value;
+
+	shape_class.style.display = "none";
+
 }
 _default();
 
@@ -65,12 +71,14 @@ function chooseBrush(){
 	}
 }
 $('pencilbtn').addEventListener('click', ()=>{
-	chooseBrush();	
+	chooseBrush();
+	shape_class.style.display = "none";
+	pencil_class.style.display = "flex";
+
 })
 $('brushes').addEventListener('change', ()=>{
 	// show pencil related settings on navabr
 	chooseBrush();
-	
 	// add drawing events to any pencil pencil type
 })
 
@@ -89,8 +97,10 @@ function chooseShape(){
 	}
 }
 $('shapebtn').addEventListener('click', ()=>{
-	console.log('circle');
 	chooseShape();
+	pencil_class.style.display = "none";
+	shape_class.style.display = "flex";
+
 })
 $('shapes').addEventListener('change', ()=>{
 	chooseShape();
@@ -156,6 +166,13 @@ $('redobtn').addEventListener('click', (e) => {
 			fabricObject[i].render(ctx)
 		}
 	}            
+})
+$('clearbtn').addEventListener('click', (e)=>{
+	tmp_ctx.clearRect(0, 0, tmp_canvas.width, tmp_canvas.height);
+	ctx.clearRect(0, 0, tmp_canvas.width, tmp_canvas.height);
+
+	fabricObject.length = 0;
+	redoFabricObject.length = 0;
 })
 
 
